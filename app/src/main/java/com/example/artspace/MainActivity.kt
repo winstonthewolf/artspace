@@ -8,10 +8,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.ElevationOverlay
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -54,20 +51,51 @@ fun Artspace(){
         verticalArrangement = Arrangement.Center
     ) {
 
-        Image(painter = painterResource(R.drawable.pb121986), contentDescription = "image",
-             modifier = Modifier
-                 .border(12.dp, Color.Blue, RectangleShape),
-            contentScale = ContentScale.FillWidth
+        Card( elevation = 33.dp,
+        shape = MaterialTheme.shapes.medium, modifier = Modifier.padding(10.dp),
+        border = BorderStroke(3.dp, Color.Black)
             )
-
-        Text(
-            text = "Los Angeles Street",
-            modifier = Modifier
-                .padding(bottom = 16.dp)
+         {
+            Image(
+                painter = painterResource(R.drawable.pb121986), contentDescription = "image",
+//                modifier = Modifier
+//                    .border(12.dp, Color.Blue, RectangleShape),
+                contentScale = ContentScale.FillWidth
+            )
+        }
+        Card( elevation = 33.dp,
+            shape = MaterialTheme.shapes.medium, modifier = Modifier.padding(10.dp),
+            border = BorderStroke(3.dp, Color.Black)
         )
-        
-        Text(text = "Hugh Reyes (2022)")
+        {
 
+            Column {
+                Text(
+                    text = "Los Angeles Street",
+                    modifier = Modifier
+                        .padding(16.dp)
+                )
+
+                Text(text = "Hugh Reyes (2022)",
+                modifier = Modifier
+                    .padding(16.dp))
+            }
+        }
+
+        Row() {
+
+            Button(onClick = { /*TODO*/ }, modifier = Modifier.padding(8.dp)) {
+
+                Text("Previous")
+
+            }
+            Button(onClick = { /*TODO*/ }, modifier = Modifier.padding(8.dp) ) {
+
+                Text("Next")
+
+            }
+
+        }
 
 
 
